@@ -137,7 +137,7 @@ def show_binary_tree(root_node, label_attr='data', file_name=None):
 
     Parameters
     ----------
-    root_node : the root node of a tree.
+    root_node : the root node of a tree. 
       A tree graph created with NetworkX
 
     label_attr: an attribute used for labeling nodes
@@ -183,7 +183,9 @@ if __name__ == '__main__':
 
     seed(1)
     r = sample(range(11, 100), 20)
-    show_binary_tree(build_bst(r), file_name='bst.png')
+    show_binary_tree(build_bst(r))
+    # show_binary_tree(build_bst(r), file_name='bst.png')
 
     gg = nx.balanced_tree(3, 2)
-    show_tree_graph(gg, file_name='tree.png')
+    show_tree_graph(gg)
+    # show_tree_graph(gg, file_name='tree.png')
