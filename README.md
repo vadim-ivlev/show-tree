@@ -79,5 +79,5 @@ Examples
 >>> show_tree_graph(gg)
 ```
 
-<img src="tree.png" width="400">
+<img src="tree.png">
 

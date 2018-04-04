@@ -4,25 +4,22 @@
 #
 # Author: Vadim Ivlev
 
-'''
-Some functions to show tree graphs. 
-Can be used both in standalone programs
-and in `jupyther` nonebooks. 
 
-Preconditions
--------------
-The folowing libraries should be installed
-`matplotlib, networkx, graphviz, pygraphviz`
+# Some functions to show tree graphs.
+# Can be used both in standalone programs
+# and in `jupyther` nonebooks.
 
-Please use conda or pip.
+# Preconditions
+# -------------
+# The folowing libraries should be installed
+# `matplotlib, networkx, graphviz, pygraphviz`
 
-Usage
------
-```
-from showtree import show_binary_tree, show_tree_graph
-```
+# Please use conda or pip.
 
-'''
+# Usage
+# -----
+
+# from showtree import show_binary_tree, show_tree_graph
 
 
 import matplotlib.pyplot as plt
@@ -42,6 +39,8 @@ def uid_gen():
 uid = uid_gen()
 
 
+# ------------------------------------------------------
+
 def show_tree_graph(G, file_name=None):
     """
     Shows a tree graph.
@@ -58,6 +57,7 @@ def show_tree_graph(G, file_name=None):
     >>> gg = nx.balanced_tree(3, 2)
     >>> show_tree_graph(gg)
     """
+
     plt.rcParams["figure.figsize"] = [10., 7.]
     pos = graphviz_layout(G, prog='dot')
 
@@ -100,6 +100,7 @@ def show_tree_graph(G, file_name=None):
         plt.clf()
 
 
+# ------------------------------------------------------------
 def build_binary_tree_graph(nx_graph, parent_node_id, tree_node, label_attr='data', edge_label=None):
     if not tree_node:
         node_id = next(uid)
@@ -121,6 +122,7 @@ def build_binary_tree_graph(nx_graph, parent_node_id, tree_node, label_attr='dat
             nx_graph, node_id, tree_node.right, label_attr, 'R')
 
 
+# -------------------------------------------------------
 def show_binary_tree(root_node, label_attr='data', file_name=None):
     """
     Shows a tree of nodes similar to:
@@ -155,6 +157,8 @@ def show_binary_tree(root_node, label_attr='data', file_name=None):
     show_tree_graph(G, file_name=file_name)
 
 
+
+# TESTING -----------------------------------------------
 if __name__ == '__main__':
     from random import sample, seed
 
