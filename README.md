@@ -10,6 +10,6 @@ Please use conda or pip.
 
 Usage
 -----
-```
+```python
 from showtree import show_binary_tree, show_tree_graph
 ```
